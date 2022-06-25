@@ -15,3 +15,4 @@
 ###########################################################################################################################################
 #ACTION			SOURCE			DEST            PROTO	PORT	IPSEC	MARK	USER	SWITCH	ORIGDEST	PROBABILITY
 #
+MASQUERADE		$LOC_CIDR               $NET_IF

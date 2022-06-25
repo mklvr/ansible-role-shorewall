@@ -33,8 +33,11 @@
   notify:
     - reload shorewall
 
-- name: Ensure the shorewall service is enable
+- name: Ensure the shorewall service is enabled
   ansible.builtin.service:
     name: shorewall
-    state: stopped
-    enabled: False
+    state: started
+    enabled: True
+
+- name: Flush the handlers
+  meta: flush_handlers
