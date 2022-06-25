@@ -1,0 +1,40 @@
+---
+- name: Install the shorewall packages and necessary other components.
+  ansible.builtin.package:
+    state: present
+    name:
+      - shorewall
+      - shorewall-doc
+      - dhcpcd5
+      - vim-tiny
+      - jove
+
+- name: Copy the templated configs to their respective locations
+  ansible.builtin.template:
+    src: "{{ item }}"
+    dest: "/etc/shorewall/{{ item | basename }}"
+    owner: root
+    group: root
+    mode: '0644'
+  with_fileglob:
+    - "templates/*"
+  notify:
+    - reload shorewall
+
+- name: Copy the static configs to their respective locations
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "/etc/shorewall/{{ item | basename }}"
+    owner: root
+    group: root
+    mode: '0644'
+  with_fileglob:
+    - "files/*"
+  notify:
+    - reload shorewall
+
+- name: Ensure the shorewall service is enable
+  ansible.builtin.service:
+    name: shorewall
+    state: stopped
+    enabled: False

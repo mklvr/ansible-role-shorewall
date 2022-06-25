@@ -1,0 +1,3 @@
+---
+net_if: eth0
+loc_if: eth1

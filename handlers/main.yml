@@ -1,0 +1,4 @@
+---
+- name: reload shorewall
+  ansible.builtin.service: name=shorewall state=reloaded
+  when: skip_handlers | default("false") == "false"
