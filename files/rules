@@ -34,7 +34,7 @@ DNS(ACCEPT)	$FW		net
 #
 SSH(ACCEPT)	loc		$FW
 SSH(ACCEPT)	net		$FW
-
+G:q
 #
 # Allow Ping from the local network
 #
@@ -52,3 +52,18 @@ ACCEPT		$FW		net		icmp
 #
 ACCEPT		$FW		net		tcp             80
 ACCEPT		$FW		net		tcp             443
+
+#
+# Allow the router to visit NTP servers
+#
+ACCEPT		$FW		net		udp             123
+
+#
+# Allow World of Warcraft Ports
+#
+ACCEPT          net             loc             tcp             1119
+ACCEPT          net             loc             tcp             3724
+ACCEPT          net             loc             tcp             6012
+ACCEPT          net             loc             udp             1119
+ACCEPT          net             loc             udp             3724
+ACCEPT          net             loc             udp             6012
