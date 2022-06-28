@@ -14,5 +14,5 @@
 ?FORMAT 2
 ###############################################################################
 #ZONE	INTERFACE	OPTIONS
-net     NET_IF          dhcp,tcpflags,nosmurfs,routefilter,logmartians,sourceroute=0,physical=$NET_IF
+net     NET_IF          dhcp,tcpflags,nosmurfs,routefilter,logmartians,sourceroute=0,physical=$NET_IF,routeback
 loc     LOC_IF          tcpflags,nosmurfs,routefilter,logmartians,physical=$LOC_IF,nets=$LOC_CIDR,dhcp

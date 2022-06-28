@@ -9,6 +9,12 @@
       - vim-tiny
       - jove
 
+- name: Remove packaged we won't be using.
+  ansible.builtin.package:
+    state: absent
+    name:
+      - dhcpcd5
+
 - name: Copy the templated configs to their respective locations
   ansible.builtin.template:
     src: "{{ item }}"
