@@ -5,7 +5,6 @@
     name:
       - shorewall
       - shorewall-doc
-      - dhcpcd5
       - vim-tiny
       - jove
 
