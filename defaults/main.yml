@@ -1,7 +1,7 @@
 ---
-net_if: enp1s0
+net_if: eth0
 
-loc_if: enx782d7e111090
-loc_net: 10.101.10.0
+loc_if: eth1
+loc_net: 192.168.0.0
 loc_netmask: 255.255.255.0
-loc_cidr: 10.101.10.0/24
+loc_cidr: 192.168.0.0/24
