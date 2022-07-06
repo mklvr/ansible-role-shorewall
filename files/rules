@@ -81,5 +81,5 @@ ACCEPT          loc             $FW             tcp             5201
 #
 # Allow Slack ports
 #
-ACCEPT		net		loc		udp		22466		99.77.128.0/18
+ACCEPT		net		loc		udp		22466		-		99.77.128.0/18
 ACCEPT		loc 		net		udp		22466
