@@ -13,5 +13,7 @@
 ###############################################################################
 #ACTION		SOURCE		DEST		PROTO	DEST		SOURCE
 #							PORT(S)		PORT(S)
-ACCEPT		LOC_IF		-
-ACCEPT		-		LOC_IF
+{% for if in loc_if %}
+ACCEPT		LOC_IF_{{ loop.index }}         -
+ACCEPT		-		LOC_IF_{{ loop.index }}
+{% endfor %}
