@@ -33,7 +33,7 @@ DNS(ACCEPT)	$FW		net
 # Accept SSH connections from the local and internet network for administration
 #
 SSH(ACCEPT)	loc		$FW
-#SSH(ACCEPT)	net		$FW
+SSH(ACCEPT)	net		$FW
 
 #
 # Allow Ping from the local network
