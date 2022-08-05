@@ -71,8 +71,9 @@
 #####################################################################################
 
 NET_IF={{ net_if }}
-
-LOC_IF={{ loc_if }}
+{% for if in loc_if %}
+LOC_IF_{{ if.index }}={{ if.name }}
+{% endfor %}
 LOC_NET={{ loc_net }}
 LOC_NETMASK={{ loc_netmask }}
 LOC_CIDR={{ loc_cidr }}
