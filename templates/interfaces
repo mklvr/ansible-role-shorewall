@@ -16,5 +16,5 @@
 #ZONE	INTERFACE	OPTIONS
 net     NET_IF          dhcp,tcpflags,nosmurfs,routefilter,logmartians,sourceroute=0,physical=$NET_IF,routeback
 {% for if in loc_if %}
-loc     LOC_IF_{{ if.index }}          tcpflags,nosmurfs,routefilter,logmartians,physical=$LOC_IF_{{ if.index }},nets=$LOC_CIDR,dhcp
+loc     LOC_IF_{{ loop.index }}          tcpflags,nosmurfs,routefilter,logmartians,physical=$LOC_IF_{{ loop.index }},nets=$LOC_CIDR,dhcp
 {% endfor %}
